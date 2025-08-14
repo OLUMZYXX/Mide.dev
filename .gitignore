@@ -20,6 +20,22 @@
 .DS_Store
 *.pem
 
+# OS files
+Thumbs.db
+
+# VS Code
+.vscode/
+
+# Swap files
+*.swp
+*.swo
+
+# Local API mocks
+mocks/
+
+# Optional: ignore public/assets if you don't want to push images
+# public/assets/
+
 # debug
 npm-debug.log*
 yarn-debug.log*
