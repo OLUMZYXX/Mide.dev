@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 
-const ServiceDetail = () => {
+const APIIntegration = () => {
   const services = [
     {
       icon: '🔗',
@@ -87,7 +87,7 @@ const ServiceDetail = () => {
   ]
 
   return (
-    <section className='min-h-screen bg-primary py-12 xl:py-16 overflow-x-hidden'>
+    <section className='min-h-screen bg-primary py-16 xl:py-20 relative overflow-hidden'>
       {/* Background Pattern */}
       <div className='absolute inset-0 opacity-5'>
         <div
@@ -100,21 +100,23 @@ const ServiceDetail = () => {
 
       <div className='container mx-auto px-6 relative z-10'>
         {/* Hero Section */}
-        <div className='text-center mb-16'>
-          <div className='inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-accent to-accent/80 rounded-full mb-6'>
+        <div className='text-center mb-20'>
+          <div className='inline-flex items-center justify-center w-24 h-24 bg-gradient-to-r from-accent to-accent/80 rounded-full mb-8 shadow-2xl shadow-accent/40'>
             <svg
-              className='w-10 h-10 text-primary'
+              className='w-12 h-12 text-primary'
               fill='currentColor'
               viewBox='0 0 24 24'
             >
               <path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z' />
             </svg>
           </div>
-          <h1 className='text-5xl xl:text-6xl font-bold mb-4'>
+
+          <h1 className='text-5xl xl:text-6xl font-bold mb-6'>
             <span className='text-white'>API</span>{' '}
             <span className='text-accent'>Integration</span>
           </h1>
-          <p className='text-white/80 text-xl max-w-3xl mx-auto leading-relaxed'>
+
+          <p className='text-white/80 text-xl max-w-4xl mx-auto leading-relaxed'>
             Connecting your applications to the digital ecosystem through
             seamless API integrations, creating dynamic, data-driven experiences
             that scale with your business needs.
@@ -122,64 +124,84 @@ const ServiceDetail = () => {
         </div>
 
         {/* Main Services Grid */}
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16'>
-          {services.map((service, index) => (
-            <div
-              key={index}
-              className='group bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6 hover:border-accent/50 transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-accent/20'
-            >
-              <div className='text-4xl mb-4 group-hover:scale-110 transition-transform duration-300'>
-                {service.icon}
-              </div>
-              <h3 className='text-xl font-bold text-white mb-3 group-hover:text-accent transition-colors duration-300'>
-                {service.title}
-              </h3>
-              <p className='text-white/70 mb-4 leading-relaxed'>
-                {service.description}
-              </p>
-              <ul className='space-y-2'>
-                {service.features.map((feature, idx) => (
-                  <li
-                    key={idx}
-                    className='flex items-center text-sm text-white/60'
-                  >
-                    <div className='w-1.5 h-1.5 bg-accent rounded-full mr-3 group-hover:bg-accent/80'></div>
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-
-        {/* Technologies Section */}
-        <div className='mb-16'>
-          <h2 className='text-3xl font-bold text-center mb-12'>
-            <span className='text-white'>Technologies &</span>{' '}
-            <span className='text-accent'>Tools</span>
+        <div className='mb-20'>
+          <h2 className='text-4xl font-bold text-center mb-16'>
+            <span className='text-white'>Our</span>{' '}
+            <span className='text-accent'>Services</span>
           </h2>
-          <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4'>
-            {technologies.map((tech, index) => (
-              <div key={index} className='group'>
-                <div
-                  className={`bg-gradient-to-r ${tech.color} p-4 rounded-lg text-center transform transition-all duration-300 hover:scale-105 hover:shadow-lg`}
-                >
-                  <span className='text-white font-semibold text-sm'>
-                    {tech.name}
-                  </span>
+
+          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
+            {services.map((service, index) => (
+              <div
+                key={index}
+                className='group bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:border-accent/50 transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-accent/20'
+              >
+                <div className='text-4xl mb-6 group-hover:scale-110 transition-transform duration-300'>
+                  {service.icon}
                 </div>
+                <h3 className='text-xl font-bold text-white mb-4 group-hover:text-accent transition-colors duration-300'>
+                  {service.title}
+                </h3>
+                <p className='text-white/70 mb-6 leading-relaxed'>
+                  {service.description}
+                </p>
+                <ul className='space-y-3'>
+                  {service.features.map((feature, idx) => (
+                    <li
+                      key={idx}
+                      className='flex items-center text-sm text-white/60'
+                    >
+                      <div className='w-2 h-2 bg-accent rounded-full mr-3 group-hover:bg-accent/80'></div>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>
         </div>
 
+        {/* Technologies Section */}
+        <div className='mb-20'>
+          <h2 className='text-4xl font-bold text-center mb-16'>
+            <span className='text-white'>Technologies &</span>{' '}
+            <span className='text-accent'>Tools</span>
+          </h2>
+
+          <div className='bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 md:p-12'>
+            <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6'>
+              {technologies.map((tech, index) => (
+                <div key={index} className='group'>
+                  <div
+                    className={`bg-gradient-to-r ${
+                      tech.color
+                    } p-5 rounded-2xl text-center transform transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:shadow-${
+                      tech.color.split('-')[1]
+                    }-500/30 shadow-lg group-hover:-translate-y-2`}
+                  >
+                    <span className='text-white font-bold text-sm block'>
+                      {tech.name}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className='text-center mt-8'>
+              <p className='text-white/70 text-sm'>
+                And many more cutting-edge tools for seamless integration
+              </p>
+            </div>
+          </div>
+        </div>
+
         {/* Process Section */}
-        <div className='mb-16'>
-          <h2 className='text-3xl font-bold text-center mb-12'>
+        <div className='mb-20'>
+          <h2 className='text-4xl font-bold text-center mb-16'>
             <span className='text-white'>Integration</span>{' '}
             <span className='text-accent'>Process</span>
           </h2>
-          <div className='grid grid-cols-1 md:grid-cols-4 gap-8'>
+          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative'>
             {[
               {
                 step: '01',
@@ -202,73 +224,76 @@ const ServiceDetail = () => {
                 desc: 'Comprehensive testing and performance optimization',
               },
             ].map((process, index) => (
-              <div key={index} className='text-center group'>
-                <div className='w-16 h-16 bg-accent text-primary rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4 group-hover:bg-accent/80 transition-colors duration-300'>
+              <div key={index} className='text-center group relative'>
+                <div className='w-20 h-20 bg-accent text-primary rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-6 group-hover:bg-accent/80 transition-colors duration-300 shadow-lg shadow-accent/30'>
                   {process.step}
                 </div>
-                <h3 className='text-lg font-bold text-white mb-2 group-hover:text-accent transition-colors duration-300'>
+                <h3 className='text-lg font-bold text-white mb-4 group-hover:text-accent transition-colors duration-300'>
                   {process.title}
                 </h3>
                 <p className='text-white/70 text-sm leading-relaxed'>
                   {process.desc}
                 </p>
-                {index < 3 && (
-                  <div className='hidden md:block absolute top-8 left-full w-full h-0.5 bg-gradient-to-r from-accent/50 to-transparent transform translate-x-4'></div>
-                )}
               </div>
             ))}
           </div>
         </div>
 
         {/* Key Benefits */}
-        <div className='bg-gradient-to-r from-accent/10 to-accent/5 rounded-2xl p-8 md:p-12 border border-accent/20'>
-          <h2 className='text-3xl font-bold text-center mb-8'>
+        <div className='bg-gradient-to-r from-accent/10 to-accent/5 rounded-3xl p-8 md:p-12 border border-accent/20 mb-20'>
+          <h2 className='text-4xl font-bold text-center mb-12'>
             <span className='text-white'>Why Choose</span>{' '}
             <span className='text-accent'>Professional API Integration?</span>
           </h2>
-          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
+          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8'>
             {[
               {
                 title: 'Scalability',
                 desc: 'Built to handle growing data demands',
+                icon: '📈',
               },
               {
                 title: 'Security',
                 desc: 'Enterprise-grade security implementation',
+                icon: '🔒',
               },
               {
                 title: 'Performance',
                 desc: 'Optimized for speed and efficiency',
+                icon: '⚡',
               },
               {
                 title: 'Reliability',
                 desc: 'Robust error handling and fallbacks',
+                icon: '🛡️',
               },
             ].map((benefit, index) => (
-              <div key={index} className='text-center'>
-                <div className='w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-4'>
-                  <div className='w-6 h-6 bg-accent rounded-full'></div>
+              <div key={index} className='text-center group'>
+                <div className='text-4xl mb-4 group-hover:scale-110 transition-transform duration-300'>
+                  {benefit.icon}
                 </div>
-                <h3 className='text-lg font-semibold text-white mb-2'>
+                <h3 className='text-lg font-semibold text-white mb-3 group-hover:text-accent transition-colors duration-300'>
                   {benefit.title}
                 </h3>
-                <p className='text-white/70 text-sm'>{benefit.desc}</p>
+                <p className='text-white/70 text-sm leading-relaxed'>
+                  {benefit.desc}
+                </p>
               </div>
             ))}
           </div>
         </div>
 
         {/* CTA Section */}
-        <div className='text-center mt-16'>
-          <h2 className='text-2xl font-bold text-white mb-4'>
+        <div className='text-center bg-white/5 backdrop-blur-sm rounded-3xl p-12 md:p-16 border border-white/10'>
+          <h2 className='text-3xl font-bold text-white mb-6'>
             Ready to integrate powerful APIs into your project?
           </h2>
-          <p className='text-white/70 mb-8'>
+          <p className='text-white/70 text-lg mb-8 max-w-2xl mx-auto'>
             Let's discuss how API integration can transform your application
           </p>
           <a
             href='/contact'
-            className='bg-gradient-to-r from-accent to-accent/80 text-primary px-8 py-3 rounded-lg font-semibold hover:from-accent/80 hover:to-accent transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-accent/30 inline-block'
+            className='bg-gradient-to-r from-accent to-accent/80 text-primary px-12 py-5 rounded-xl font-semibold hover:from-accent/80 hover:to-accent transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-accent/30 inline-block text-lg'
           >
             Contact Us
           </a>
@@ -278,4 +303,4 @@ const ServiceDetail = () => {
   )
 }
 
-export default ServiceDetail
+export default APIIntegration
