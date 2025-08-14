@@ -1,81 +1,101 @@
-"use client";
-import { BsArrowDownRight } from "react-icons/bs";
-import Link from "next/link";
-
-import { motion } from "framer-motion";
+'use client'
+import { BsArrowDownRight } from 'react-icons/bs'
+import Link from 'next/link'
+import { motion } from 'framer-motion'
 
 const services = [
   {
-    num: "01",
-    title: "Web Development",
+    num: '01',
+    title: 'Web App Development',
+    slug: 'web-development',
     description:
-      "Web Developer with a solid foundation in front-end and back-end development, skilled in building responsive, user-friendly websites. Experienced in HTML, CSS, JavaScript, and modern frameworks like React and Node.js. .",
+      'Modern React/Next.js applications with performance optimization and best practices.',
   },
   {
-    num: "02",
-    title: "Logo Design",
+    num: '02',
+    title: 'Performance & SEO',
+    slug: 'optimization',
     description:
-      "Creative logo design with a strong eye for branding and visual identity.Experienced in developing unique, memorable logos that enhance web presence and resonate with target audiences. ",
+      'Speed optimization, SEO improvements, and accessibility enhancements.',
   },
   {
-    num: "03",
-    title: "Web Design",
+    num: '03',
+    title: 'API Integration',
+    slug: 'api-integration',
     description:
-      "I focus on creating intuitive and visually stunning websites. Committed to enhancing user experience through thoughtful design and responsive layouts.",
+      'REST/GraphQL APIs and third-party service integrations for dynamic experiences.',
   },
   {
-    num: "04",
-    title: "SEO",
+    num: '04',
+    title: 'Responsive Design',
+    slug: 'responsive-design',
     description:
-      "SEO specialist for optimizing websites to boost search engine rankings and enhance user experience. Skilled in keyword research, content strategy, and technical SEO to drive organic traffic and improve online visibility",
+      'Mobile-first development ensuring perfect performance across all devices.',
   },
-];
+  {
+    num: '05',
+    title: 'Cross-Platform Support',
+    slug: 'cross-platform',
+    description:
+      'Consistent experience across browsers and platforms with thorough testing.',
+  },
+  {
+    num: '06',
+    title: 'Maintenance & Support',
+    slug: 'maintenance',
+    description:
+      'Ongoing updates, monitoring, and technical support for long-term success.',
+  },
+]
+
 const Services = () => {
   return (
-    <section className="min-h-[80vh] flex flex-col justify-center py-12 xl:py-0">
-      <div className="container mx-auto">
+    <section className='min-h-[80vh] flex flex-col justify-center py-12 xl:py-0'>
+      <div className='container mx-auto'>
         <motion.div
           initial={{ opacity: 0 }}
           animate={{
             opacity: 1,
-            transition: { delay: 2.4, duration: 0.4, ease: "easeInOut" },
+            transition: { delay: 0.2, duration: 0.4, ease: 'easeInOut' },
           }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-[60px]  "
+          className='grid grid-cols-1 md:grid-cols-2 gap-16'
         >
-          {services.map((services, index) => {
-            return (
-              <div
-                key={index}
-                className="flex-1 flex flex-col justify-center gap-6 group"
-              >
-                <div className="w-full flex justify-between items-center">
-                  <div className="text-5xl font-extrabold text-outline text-transparent group-hover:text-outline-hover transition-all duration-500 ">
-                    {services.num}
-                  </div>
-
-                  {/* check on this below again  */}
-                  <Link
-                    href={services.num}
-                    className="w-[70px] h-[70px] rounded-full bg-white group-hover:bg-accent transition-all duration-500 flex justify-center items-center hover:-rotate-45"
-                  >
-                    <BsArrowDownRight className="text-primary text-3xl" />
-                  </Link>
+          {services.map((service, index) => (
+            <div
+              key={service.slug}
+              className='flex flex-col justify-center gap-6 group'
+            >
+              <div className='w-full flex justify-between items-center'>
+                <div className='text-5xl font-extrabold text-outline text-transparent group-hover:text-outline-hover transition-all duration-500'>
+                  {service.num}
                 </div>
-                {/* Heading */}
-                <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500">
-                  {services.title}
-                </h2>
-                {/* Description */}
-                <p className="text-white/60">{services.description}</p>
-                {/* border */}
-                <div className="border-b border-white/20 w-full  "></div>
+
+                <Link
+                  href={`/services/${service.slug}`}
+                  className='w-[70px] h-[70px] rounded-full bg-white group-hover:bg-accent transition-all duration-500 flex justify-center items-center hover:-rotate-45'
+                  aria-label={`View ${service.title} details`}
+                >
+                  <BsArrowDownRight className='text-primary text-3xl' />
+                </Link>
               </div>
-            );
-          })}
+
+              <Link href={`/services/${service.slug}`}>
+                <h2 className='text-3xl font-bold leading-none text-white group-hover:text-accent transition-all duration-500'>
+                  {service.title}
+                </h2>
+              </Link>
+
+              <p className='text-white/60 leading-relaxed'>
+                {service.description}
+              </p>
+
+              <div className='border-b border-white/20 w-full' />
+            </div>
+          ))}
         </motion.div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Services;
+export default Services
