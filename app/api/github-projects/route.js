@@ -1,4 +1,4 @@
-// /app/api/github-projects/route.js
+
 import { NextResponse } from 'next/server'
 
 const GITHUB_USERNAME = 'OLUMZYXX'

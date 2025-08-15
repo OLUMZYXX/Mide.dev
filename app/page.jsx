@@ -200,8 +200,9 @@ const Home = () => {
                   className='group bg-gradient-to-r from-accent to-accent/80 hover:from-accent/90 hover:to-accent text-primary hover:text-primary border-0 px-8 py-4 rounded-2xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-accent/25 font-primary'
                 >
                   <a
-                    href='/assets/resume/resume.docx'
+                    href='/assets/resume/_Olumide%20Akinwumi%20-%20Frontend%20Engineer%20(1).pdf'
                     className='flex items-center gap-3'
+                    download
                   >
                     <FiDownload className='text-xl group-hover:animate-bounce' />
                     Download CV

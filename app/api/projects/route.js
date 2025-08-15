@@ -1,4 +1,4 @@
-// /app/api/projects/route.js
+
 import { NextResponse } from 'next/server'
 
 const projects = [
